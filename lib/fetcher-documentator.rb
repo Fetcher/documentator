@@ -29,6 +29,8 @@ module Fetcher
             transform_to_link(@text_flat[i][4..-1]).each do |line|
               @doc << line
             end
+          elsif @text_flat[i].start_with? "## >"
+            @doc << @text_flat[i][3..-1]
           else
             @doc << @text_flat[i][3..-1] 
             if @doc.last.nil?

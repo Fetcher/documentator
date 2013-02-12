@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH << File.expand_path("../../lib", __FILE__)
+
+require 'fetcher-documentator'
+
+Dir["**/*.rb"].each do |file|
+  Fetcher::Documentator.new file
+end
